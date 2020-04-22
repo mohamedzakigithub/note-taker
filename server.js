@@ -40,7 +40,7 @@ app.post("/api/notes", function (req, res) {
     if (notes[notes.length - 1]) {
       newNote.id = notes[notes.length - 1].id + 1;
     } else {
-      newNote.id = 0;
+      newNote.id = 1;
     }
     notes.push(newNote);
     fs.writeFile("./db/db.json", JSON.stringify(notes), function (error) {
